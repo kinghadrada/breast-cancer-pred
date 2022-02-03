@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+	
+	<div class="results">
+
+		
+	{% if prediction == 1%}
+	<h4 style="text-align: center">The model predicts no malignancy</h4>
+	{% elif prediction == 0%}
+	<h4 style="text-align: center" id="maligheader">The model predicts malignancy</h4>
+	{% endif %}
+
+	</div>
+	
+</body>
+</html>

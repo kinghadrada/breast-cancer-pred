@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+	<header>
+		
+		
+		<div class="container">
+
+		<h3>Predicting Breast Cancer Malignancy using FNA Slide-Images (based on UCI ML Breast Cancer Wisconsin (Diagnostic) Dataset)</h3>
+		
+		</div>
+	
+	
+	</header>
+
+	<div class="ml-container">
+
+	<form action="{{ url_for('predict')}}" method="POST">
+		
+		
+		<p><br>  
+		
+		Kindly enter the following data in the given format: <br>
+		<b> mean_radius, mean_texture </b> <br> <br>
+		
+		radius: Is the distance from center to points on the perimeter of a nuclei in 
+			Fine Needle Aspiration slide-image (in mm)<br><br>
+		
+		mean_radius: Is the mean for the 10-40 nuclei radius found the image (in mm)<br> 
+		
+		<figure>
+	
+		<img src="{{url_for('static', filename='FNA-img.png')}}" />
+	    
+    		<figcaption>Visible cell nuclei from a malignant FNA sample. <a href="https://doi.org/10.1287/opre.43.4.570" target="_blank">Source</a></figcaption>
+		</figure>
+		
+		[this can be calculated easily using UW-M's XCyt[*] software] <br><br>
+		
+		mean_texture: is the mean for all nulcei's standard deviation of gray-scale values<br>
+		
+		[this needs UW-M's XCyt software or any other image analysis software] <br>
+		
+		<br> <br>
+		
+		<b>Example: 17.99, 10.38 </b> <br>
+			
+		</p>
+
+
+		<textarea name="message" rows="1" cols="20" type="number"></textarea>
+
+
+
+		<br><input type="submit" class="btn-info" value="predict">
+		
+	</form>
+		
+	</div>
+
+	<p> <a href="https://pages.cs.wisc.edu/~olvi/uwmp/cancer.html" target="_blank"> [*]University of Wisconsin-Madison ML for Breast Cancer Prediction </a> <br>(Prof. Olvi L. Mangasarian and Dr. William H. Wolberg)	
+	
+	
+
+</body>
+</html>
