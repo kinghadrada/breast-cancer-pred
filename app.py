@@ -18,6 +18,11 @@ def fl_lst(text_1):
 
     return [float(x) for x in text_1.split(',')]
 
+
+@app.errorhandler(500)
+def page_not_found(e):
+    
+    return render_template('err_handle.html'), 500
         
 
 @app.route('/')
